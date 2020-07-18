@@ -19,6 +19,7 @@ export const CardArea = styled.div`
     border-radius: 15px;
     width: 50ch;
     height: 50ch;
+    cursor: pointer;
     will-change: transform, opacity;
   }
 
@@ -140,7 +141,7 @@ export default function Card(props) {
   }, [props.flipped])
 
   return (
-    <CardArea>
+    <CardArea onClick={() => setFlipped(state => !state)}>
       <animated.div className="card front" style={{ opacity: opacity.interpolate(o => 1 - o), transform }}>
         <div className="area-card">
           <div className="area-chip">
